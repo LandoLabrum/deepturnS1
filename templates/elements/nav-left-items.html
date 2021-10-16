@@ -1,0 +1,13 @@
+<li><a class="center">Logo</a></li>
+<li><a
+    
+    >Home</a></li>
+{% if user.is_authenticated %}
+<li><a
+    
+    >authed</a></li>
+{% else %}
+<li><a
+    
+    >unauthed</a></li>
+{% endif %}

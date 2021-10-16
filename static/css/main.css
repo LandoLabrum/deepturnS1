@@ -1,0 +1,45 @@
+:root{
+    --black: #000 !important
+}
+.nav-right-trigger{
+    right: 0;
+    position: fixed;
+    margin-right: 15px;
+}
+.a-yellow{
+    background-color: #ffc107 !important
+}
+.a-gray{
+    background-color: #009688 !important
+}
+.a-red{
+    background-color: #e91e63 !important
+}
+.a-blue{
+    background-color: #64ffda !important
+}
+.a-yellow-text{
+    color: #ffc107 !important
+}
+.a-gray-text{
+    color: #009688 !important
+}
+.a-red-text{
+    color: #e91e63 !important
+}
+.a-blue-text{
+    color: #64ffda !important
+}
+.nav-transparent{
+    box-shadow: none;
+    background-color: rgba(0,0,0,0) !important;
+}
+
+nav ul a, .sidenav li>a {
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+nav .sidenav-trigger i{
+    color: var(--black);
+}

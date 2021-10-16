@@ -1,0 +1,29 @@
+{% load static %}
+
+<nav class="nav-transparent">
+  <div class="nav-wrapper">
+    <a data-target="nav-left" class="sidenav-trigger">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="hide-on-med-and-down">
+      {% include 'templates/elements/nav-left-items.html' %}
+    </ul>
+    <ul class="hide-on-med-and-down">
+      {% include 'templates/elements/nav-right-items.html' %}
+    </ul>
+    <ul class="nav-right-trigger hide-on-large-only">
+      <li>
+        <a onclick="$('#nav-right').sidenav('open')">
+          <i class="material-icons">person_outline</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="sidenav" id="nav-left">
+      {% include 'templates/elements/nav-left-items.html' %}
+    </ul>
+    <ul class="sidenav" id="nav-right">
+      {% include 'templates/elements/nav-right-items.html' %}
+    </ul>
+    
+  </div>
+</nav>

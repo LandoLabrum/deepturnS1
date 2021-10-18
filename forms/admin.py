@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import F101
 
-# admin.site.register(Leads)
 
 
 @admin.register(F101)

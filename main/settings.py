@@ -14,7 +14,9 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
-
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("text/html", ".css", True)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u)-7jyas_yc#+!irx(lxdf=(n*b6n$^f1cwgup@eo#fy5*xo0w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['35.86.39.2']
 
@@ -34,7 +36,7 @@ ALLOWED_HOSTS = ['35.86.39.2']
 # Application definition
 
 INSTALLED_APPS = [
-    'leads',
+    'lead',
     'forms',
     'accounts',
     'django.contrib.admin',

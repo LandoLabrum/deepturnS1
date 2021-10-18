@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import F101
 
-# Register your models here.
+# admin.site.register(Leads)
+
+
+@admin.register(F101)
+class F101Admin(admin.ModelAdmin):
+    pass

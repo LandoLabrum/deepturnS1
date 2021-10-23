@@ -1,9 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
-from django.core.validators import FileExtensionValidator
+# from django.contrib.auth.models import User
 
 
-class Lead(models.Model):
+class lead_model(models.Model):
     src = models.CharField(max_length=30, null=True, blank=True)
     fname = models.CharField(max_length=30, null=True, blank=True)
     lname = models.CharField(max_length=30, null=True, blank=True)

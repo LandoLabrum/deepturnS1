@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="{% static '/css/main.css'%}" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {% block css %}
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css"
+      integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+   {% endblock css %}
+   <link rel="shortcut icon" type="image/ico" href="{% static '/images/favicon.ico'%}" />
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>MyRealityEquation {{ user.username }}</title>
+</head>
+
+<body>
+   <div class="section">
+      <div class="center">
+          <img class="brand-logo" src="{% static 'images/logo.png' %}">
+      </div>
+  </div>
+   <div class="container">
+      {% block content %}
+      {% endblock %}
+   </div>
+
+</body>
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
+   integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static '/js/main.js' %}"></script>
+{% endblock javascript %}
+</html>

@@ -1,4 +1,4 @@
-#!/Users/landolabrum/code/deepturn/server/env/bin/python
+#!/Users/landolabrum/code/clients/nick_brocco/main/env/bin/python3.8
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

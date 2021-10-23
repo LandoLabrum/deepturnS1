@@ -1,0 +1,14 @@
+<form action="#" method="POST" id="{{ title }}">
+    {% csrf_token %}
+    {% for choice in choices %}
+    <p>
+        <label>
+            <input onclick="submit('true', '{{ title }}')" name="value" type="radio" value='{{choice}}' />
+            <span>{{choice}}</span>
+        </label>
+    </p>
+    {% endfor %}
+    <input type='hidden' value='radio' name='type'/>
+    <input type='hidden' value='{{ field_id }}' name='field_id'/>
+    <input type='hidden' value='{{next}}' name='next'/>
+</form>

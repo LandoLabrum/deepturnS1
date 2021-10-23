@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
+    path('', include('account.urls')),
+    path('form/', include('form.urls')),
     path('lead/', include('lead.urls')),
-    path('forms/', include('forms.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

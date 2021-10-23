@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="card link" >
+    <div class="card-content">
+        <div class="row">
+            <div class="col m6 center hide-on-small-and-down">
+                <img class="responsive-img" style="height: 250px" src="{% static 'images/lead_the_way.png' %}" />
+                <h6>FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
+                <a href="{% url 'form_one'  %}"  class="waves-effect waves-light btn green accent-3"><i
+                        class="material-icons right">arrow_forward</i>take the quiz</a>
+            </div>
+            <div class="center hide-on-med-and-up">
+                <img class="responsive-img" src="{% static 'images/lead_the_way.png' %}" />
+                <h6>FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
+                <a href="{% url 'form_one' %}" class="waves-effect waves-light btn green accent-3"><i
+                        class="material-icons right">arrow_forward</i>take the quiz</a>
+                <br />
+                <br />
+            </div>
+            <div class="col s12 m6">
+                <div class="container">
+                    <img class="responsive-img nick" src="{% static 'images/lead_the_way_nick.webp' %}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row ">
+    <div class="col s12 m6 ">
+        <h5>Client Testimonials</h5>
+        <div class="responsive-img">
+            <video controls>
+                <source src="{% static 'images/contact.mp4' %}" type="video/mp4">
+                </source>
+            </video>
+        </div>
+    </div>
+</div>
+<div style="bottom: 0; width: 100%; text-align: center;">
+    <h6 class="grey-text">www.MyRealityEquation.com</h6>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- {{data}} -->
+<div class="row ">
+    <div class="valign-wrapper" style="min-height: calc(100vh - 30vh);">
+        <div class="col s12 m8 l6 offset-m2 offset-l3">
+            <div class="valign">
+                <h4>{{ title }}</h4>
+                <div class="card row">
+                    <div class="card-content">
+
+                        {% if type == 'Input' %}
+                            <h4>input</h4>
+                        {% elif type == 'Radio' %}
+                            {% include 'form/elements/radio.html' %}
+                        {% elif type == 'Checkbox' %}
+                            {% include 'form/elements/checkbox.html' %}
+                        {% elif type == 'Range' %}
+                            {% include 'form/elements/range.html' %}
+                        {% elif type == 'Contact' %}
+                            {% include 'form/contact.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

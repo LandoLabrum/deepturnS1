@@ -1,3 +1,5 @@
+{% load static %}
+
 <form action="#" method="POST" id="{{ title }}">
     {% csrf_token %}
     <h4>Schedule a consultation</h4>
@@ -13,25 +15,65 @@
     </div>
     <div class="col s12">
         Phone Number
-        <input type="tel" name="tel" maxLength="16" />
+        <input id="phoneNumber" maxlength="16" type="tel" name="tel" maxLength="16" />
     </div>
     <div class="col s12">
         Email
-        <input type="email" name="email" />
+        <input onchange="emailHandler()" type="email" id="email" name="email" />
+        <span id="invalid_email" class="err orange-text">* Not a valid email</span><br/>
+    </div>
+    <br />
+    <div class='col s12'>
+        <h6>Schedule an appointment</h6>
+    </div>
+
+    <div class="col s6">
+        <a class="waves-effect waves-light btn btn-block blue lighten-3 modal-trigger" id='date-trigger' href="#date-modal">Choose date</a>
+
+        <!-- Modal Structure -->
+        <div id="date-modal" class="modal">
+          <div class="modal-content">
+            <h4>Pick a date</h4>
+            {% for t in dates %}
+                <div class="col s2">
+                    <p>
+                        <label>
+                            <input onclick="dateHandler('{{t}}')" name="date" type="radio" value='{{t}}' />
+                            <span>{{t}}</span>
+                        </label>
+                    </p>
+                </div>
+            {% endfor %}
+            <br/>
+          </div>
+        </div>
     </div>
     <div class="col s6">
-        Date
-        <input type="date" name="date" />
-    </div>
-    <div class="col s6">
-        Time
-        <input type="time" name="time" />
-        <br />
-        <br />
+        <a class="waves-effect waves-light btn btn-block blue lighten-3 modal-trigger" id='time-trigger' href="#time-modal">Choose time</a>
+        <div id="time-modal" class="modal">
+          <div class="modal-content">
+            <h4>Pick a time</h4>
+            {% for t in times %}
+                <div class="col s2">
+                    <p>
+                        <label>
+                            <input onclick="timeHandler('{{t}}')" name="time" type="radio" value='{{t}}' />
+                            <span>{{t}}</span>
+                        </label>
+                    </p>
+                </div>
+            {% endfor %}
+            <br/>
+          </div>
+        </div>
     </div>
     <input type="hidden" value='myrealityequation.com' name="src" />
     <input type="hidden" value='submit' name="next" />
-    <input type='hidden' value='{{ field_id }}' name='field_id'/>
+    <input type='hidden' value='meeting' name='fid' />
+    <div class="col s12">
+    <br/>
+    <br/>
+    </div>
     <input class="btn btn-block green" type="submit" name="type" />
 
 </form>

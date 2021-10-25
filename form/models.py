@@ -20,7 +20,7 @@ class one_question(models.Model):
         ('Switch', 'Switch'),
     )
 
-    field_id= models.CharField(max_length=100, primary_key=True)
+    fid= models.CharField(max_length=100, primary_key=True)
     title= models.CharField(max_length=100, null=True, blank=True)
     next = models.CharField(max_length=100, null=True, blank=True)
     type = models.CharField(max_length=20, blank=False, default='Input',
@@ -29,7 +29,7 @@ class one_question(models.Model):
     
 
     def __str__(self):
-        return self.field_id
+        return self.fid
 
 
 class one(models.Model):
@@ -42,6 +42,7 @@ class one(models.Model):
     willing = models.CharField(max_length=70, null=True, blank=True)
     change = models.CharField(max_length=350, null=True, blank=True)
     meeting = models.BigIntegerField(primary_key=True, unique=True)
+    meeting_str = models.CharField(max_length=30,unique=True)
     submitted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -2,14 +2,19 @@
 {% load static %}
 {% block content %}
 
-<div class="card link" >
+<div class="card link">
     <div class="card-content">
         <div class="row">
             <div class="col m6 center hide-on-small-and-down">
-                <img class="responsive-img" style="height: 250px" src="{% static 'images/lead_the_way.png' %}" />
+                <br/>
+                <br/>
+                <img class="responsive-img" style="height: 250px"
+                src="{% static 'images/lead_the_way.png' %}" />
                 <h6>FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
-                <a href="{% url 'form_one'  %}"  class="waves-effect waves-light btn green accent-3"><i
-                        class="material-icons right">arrow_forward</i>take the quiz</a>
+                
+                <br/>
+                        <a href="{% url 'form_one'  %}" class="waves-effect waves-light btn green accent-3"><i
+                                class="material-icons right">arrow_forward</i>take the quiz</a>
             </div>
             <div class="center hide-on-med-and-up">
                 <img class="responsive-img" src="{% static 'images/lead_the_way.png' %}" />

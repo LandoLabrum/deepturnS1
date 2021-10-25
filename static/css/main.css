@@ -5,4 +5,20 @@ video {
 .btn-block{
   width: 100% !important;
 }
+.break{
+  height: 120px;
+  display: block;
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+  background-color: #175e9c !important;
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+  border: 2px solid  #175e9c !important;
+  border-top-color:  #175e9c !important;
+  border-right-color:  #175e9c !important;
+  border-bottom-color:  #175e9c !important;
+  border-left-color:  #175e9c !important;
+}
+.datepicker-date-display, .timepicker-digital-display{background-color: #175e9c !important;}
+.datepicker-cancel, .datepicker-done{color: #175e9c !important;}
 /* OLD */

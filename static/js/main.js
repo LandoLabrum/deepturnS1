@@ -7,9 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
   M.Datepicker.init(datepicker);
   var timepicker = document.querySelectorAll('.timepicker', { 'vibrate': true });
   M.Timepicker.init(timepicker);
-
+  $('input[type="checkbox"]').click(function () {
+    if ($(this).is(":checked")) {
+      $(this).parent().addClass('grey lighten-3 grey-text text-darken-3')
+      console.log("Checkbox is checked.");
+    }
+    else if ($(this).is(":not(:checked)")) {
+      $(this).parent().removeClass('grey lighten-3 grey-text text-darken-3')
+      console.log("Checkbox is unchecked.");
+    }
+  });
+  // VALIDATORS
   $('.err').hide();
-
   const isNumericInput = (event) => {
     const key = event.keyCode;
     return ((key >= 48 && key <= 57) || // Allow number line
@@ -118,4 +127,7 @@ function emailHandler() {
     $('#invalid_email').hide();
   }
 }
-
+function rangeHandler() {
+  var val = $('#range').val();
+  $('#range-info').text(val+'/10');
+}

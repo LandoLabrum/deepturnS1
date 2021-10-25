@@ -1,0 +1,17 @@
+<div id="date-modal" class="modal">
+  <div class="modal-content">
+    <div class=" row">
+      <h4 class="grey-text text-darken-2">Pick a date</h4>
+      {% for t in dates %}
+      <div class="col s4 center">
+        <label class="flow-text">
+          <input onclick="dateHandler('{{t}}')" name="date" type="radio" value='{{t}}' />
+          <span>{{t}}</span>
+        </label>
+      </div>
+      {% endfor %}
+      <div class="break"></div>
+      <div class="break"></div>
+    </div>
+  </div>
+</div>

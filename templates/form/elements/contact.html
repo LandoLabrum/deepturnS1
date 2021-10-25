@@ -30,42 +30,11 @@
     <div class="col s6">
         <a class="waves-effect waves-light btn btn-block blue lighten-3 modal-trigger" id='date-trigger' href="#date-modal">Choose date</a>
 
-        <!-- Modal Structure -->
-        <div id="date-modal" class="modal">
-          <div class="modal-content">
-            <h4>Pick a date</h4>
-            {% for t in dates %}
-                <div class="col s2">
-                    <p>
-                        <label>
-                            <input onclick="dateHandler('{{t}}')" name="date" type="radio" value='{{t}}' />
-                            <span>{{t}}</span>
-                        </label>
-                    </p>
-                </div>
-            {% endfor %}
-            <br/>
-          </div>
-        </div>
+        {% include 'elements/date-modal.html' %}
     </div>
     <div class="col s6">
         <a class="waves-effect waves-light btn btn-block blue lighten-3 modal-trigger" id='time-trigger' href="#time-modal">Choose time</a>
-        <div id="time-modal" class="modal">
-          <div class="modal-content">
-            <h4>Pick a time</h4>
-            {% for t in times %}
-                <div class="col s2">
-                    <p>
-                        <label>
-                            <input onclick="timeHandler('{{t}}')" name="time" type="radio" value='{{t}}' />
-                            <span>{{t}}</span>
-                        </label>
-                    </p>
-                </div>
-            {% endfor %}
-            <br/>
-          </div>
-        </div>
+        {% include 'elements/time-modal.html' %}
     </div>
     <input type="hidden" value='myrealityequation.com' name="src" />
     <input type="hidden" value='submit' name="next" />
@@ -74,6 +43,5 @@
     <br/>
     <br/>
     </div>
-    <input class="btn btn-block green" type="submit" name="type" />
-
+    <input id="contact-submit" class="btn btn-block submit" type="submit" name="type" />
 </form>

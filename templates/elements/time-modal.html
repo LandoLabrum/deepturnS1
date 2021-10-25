@@ -1,0 +1,14 @@
+<div id="time-modal" class="modal">
+    <div class="modal-content">
+        <h4 class="grey-text text-darken-2">Pick a time</h4>
+        {% for t in times %}
+        <div class="col s3 center-align">
+            <label>
+                <input onclick="timeHandler('{{t}}')" name="time" type="radio" value='{{t}}' />
+                <span>{{t}}</span>
+            </label>
+        </div>
+        {% endfor %}
+        <div class="break"></div>
+    </div>
+</div>

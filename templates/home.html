@@ -1,36 +1,40 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
+<div class="center">
+    <a href="{% url 'home' %}">
+        <img class="brand-logo"  src="{% static 'images/logo-lite.svg' %}"></a>
+</div>
+<br/>
+<div class="link lavendar">
+    <div class="break"></div>
+    <div class="row">
+        <div class="col m6 l5 offset-l1 hide-on-small-and-down valign-wrapper">
+            <div class="valign center">
+                <div class="break"></div>
+                <img class="responsive-img" style="height: 250px" src="{% static 'images/lead_the_way.png' %}" />
+                <h6 class="grey-text text-darken-3">FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
 
-<div class="card link">
-    <div class="card-content">
-        <div class="row">
-            <div class="col m6 center hide-on-small-and-down">
-                <br/>
-                <br/>
-                <img class="responsive-img" style="height: 250px"
-                src="{% static 'images/lead_the_way.png' %}" />
-                <h6>FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
-                
-                <br/>
-                        <a href="{% url 'form_one'  %}" class="waves-effect waves-light btn green accent-3"><i
-                                class="material-icons right">arrow_forward</i>take the quiz</a>
-            </div>
-            <div class="center hide-on-med-and-up">
-                <img class="responsive-img" src="{% static 'images/lead_the_way.png' %}" />
-                <h6>FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
-                <a href="{% url 'form_one' %}" class="waves-effect waves-light btn green accent-3"><i
+                <br />
+                <a href="{% url 'form_one'  %}" class="waves-effect waves-light btn green accent-3"><i
                         class="material-icons right">arrow_forward</i>take the quiz</a>
-                <br />
-                <br />
             </div>
-            <div class="col s12 m6">
-                <div class="container">
-                    <img class="responsive-img nick" src="{% static 'images/lead_the_way_nick.webp' %}" />
-                </div>
+        </div>
+        <div class="center hide-on-med-and-up">
+            <img class="responsive-img" src="{% static 'images/lead_the_way.png' %}" />
+            <h6 class="grey-text text-darken-3">FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
+            <a href="{% url 'form_one' %}" class="waves-effect waves-light btn green accent-3"><i
+                    class="material-icons right">arrow_forward</i>take the quiz</a>
+            <br />
+            <br />
+        </div>
+        <div class="col s12 m6">
+            <div class="container">
+                <img class="responsive-img nick" src="{% static 'images/lead_the_way_nick.webp' %}" />
             </div>
         </div>
     </div>
+    <div class="break"></div>
 </div>
 <div class="row ">
     <div class="col s12 m6 ">
@@ -43,8 +47,6 @@
         </div>
     </div>
 </div>
-<div style="bottom: 0; width: 100%; text-align: center;">
-    <h6 class="grey-text">www.MyRealityEquation.com</h6>
-</div>
+
 
 {% endblock content %}

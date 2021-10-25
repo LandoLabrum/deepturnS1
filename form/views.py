@@ -6,11 +6,16 @@ from django.http import HttpResponseRedirect
 # from django.contrib import messages
 # from django.contrib.auth import authenticate, login, logout
 # from django.contrib.auth.models import User
-from datetime import datetime
+from datetime import datetime, timedelta, date
 import time
 from .serializers import one_serializer, lead_serializer
 from .models import one_question
 
+def daterange():
+    date1 = date.today()+timedelta(days=1) 
+    date2 = (date.today()+timedelta(days=30))
+    for n in range(int ((date2 - date1).days)+1):
+        yield (date1 + timedelta(n)).strftime("%b %d, %Y")
 
 def session_handler(request):
     context = {}
@@ -49,6 +54,7 @@ def session_handler(request):
             session.__setitem__("meeting_str", date_str)
             return True
         else:
+            # print(f'SER LEAD ERR: \t {serializer.errors}')
             return serializer.errors
 
 
@@ -61,13 +67,13 @@ def one_view(request):
     if request.method == 'GET':
         next = 'age_range'
     if request.method == 'POST':
-        data = request.POST 
+        data = request.POST
         next = data['next']
         session = session_handler(request)
     if next == 'meeting':
         context['type'] = 'Contact'
-        context['dates']=['Oct 24, 2021', 'Oct 25, 2021', 'Oct 26, 2021']
-        context['times']=['8:15 AM', '8:30 AM', '8:45 AM']
+        context['dates'] = list(daterange())
+        context['times'] = ['8:15 AM', '8:30 AM', '8:45 AM']
     elif next == 'submit':
         all_session = dict(request.session.items())
         # print(f"SESSION: \t {request.session.items()}")
@@ -75,15 +81,14 @@ def one_view(request):
         if serializer.is_valid():
             if session == True:
                 serializer.save()
-                print(f"VALID_FORM: {serializer}")
+                # print(f"VALID_FORM: {serializer}")
                 context['meeting'] = request.POST
- 
+
         else:
-            context['errors']={}
+            context['errors'] = {}
             context['errors']['lead'] = session
             context['errors']['form'] = serializer.errors
-            # print(f'errs141: \t {serializer.errors}')
-            # print(f'errs142: \t {session}')
+
     else:
         context = list(one_question.objects.filter(fid=next).values())[0]
         context['choices'] = context['choices'].split(";")

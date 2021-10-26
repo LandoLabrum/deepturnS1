@@ -3,3 +3,4 @@ env/
 migrations/
 __pycache__
 static/
+.DS_Store

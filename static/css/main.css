@@ -21,7 +21,13 @@ input[type=range]::-moz-range-thumb {
 input[type=range]::-ms-thumb {
   background-color: #C9A3A4 !important;
 }
+.primary{
+  background-color: #f50 !important;
+  background-image: linear-gradient(rgb(255, 119, 0), rgb(255, 51, 0));
+  background: linear-gradient(#f70,#f30);
+  background-image: linear-gradient(rgb(255, 119, 0), rgb(255, 51, 0));
 
+}
 /***** These are to edit the thumb and the text inside the thumb *****/
 input[type=range] + .thumb {
   background-color: #dedede !important;

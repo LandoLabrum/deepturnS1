@@ -1,5 +1,6 @@
 // $(document).ready(function () {   alert('worked') });
 document.addEventListener('DOMContentLoaded', function () {
+  // document.getElementById('autoplay').play();
   $('.modal').modal();
   var elems = document.querySelectorAll('.materialboxed');
   M.Materialbox.init(elems);
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const inputElement = document.getElementById('phoneNumber');
   inputElement.addEventListener('keydown', enforceFormat);
   inputElement.addEventListener('keyup', formatToPhone);
-
+  $("#autoplay")[0].play();
 
 
   // var email = $('#email').val();
